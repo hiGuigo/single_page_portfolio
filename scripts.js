@@ -1,15 +1,20 @@
 // saudação
 function saudacao() {
-    const h2 = document.getElementById("saudacao")
+    const elementos = document.querySelectorAll(".saudacao")
     const hora = new Date().getHours()
+    let mensagem
 
     if (hora < 12) {
-        h2.textContent = "Bom dia, eu me chamo"
+        mensagem = "Bom dia, eu me chamo"
     } else if (hora < 18) {
-        h2.textContent = "Boa tarde, eu me chamo"
+        mensagem = "Boa tarde, eu me chamo"
     } else {
-        h2.textContent = "Boa noite, eu me chamo"
+        mensagem = "Boa noite, eu me chamo"
     }
+
+    elementos.forEach(el => {
+        el.textContent = mensagem
+    })
 }
 saudacao()
 
