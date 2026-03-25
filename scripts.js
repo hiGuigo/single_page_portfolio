@@ -67,8 +67,11 @@ const koitech = new Projeto(
     "Herança de templates com Flask",
   ],
   [
-    "https://github.com/koitech-API",
-    "https://www.youtube.com/watch?v=_kmMAI6yvoQ",
+    { key: "https://github.com/koitech-API", value: "Repositório" },
+    {
+      key: "https://www.youtube.com/watch?v=_kmMAI6yvoQ",
+      value: "Demonstração",
+    },
   ],
 );
 
@@ -94,7 +97,12 @@ const koitechAero = new Projeto(
     "Gerenciamento de props entre componentes",
     "Estruturação de pastas pensando em crescimento do projeto",
   ],
-  ["https://github.com/KoiTech-Aero"],
+  [
+    {
+      key: "https://github.com/koitech-aero",
+      value: "Repositório",
+    },
+  ],
 );
 
 projetos.push(koitechAero);
@@ -118,12 +126,10 @@ function renderizarProjetos() {
         return array.map((item) => `<p>${item}</p>`).join("");
       }
     }
-    function ListaLinks(array) {
-      for (const i of array) {
-        return array
-          .map((item) => `<p><a href="${item}">${item}</a></p>`)
-          .join("");
-      }
+    function ListaLinks(objeto) {
+      return objeto
+        .map((item) => `<p><a href="${item.key}">• ${item.value}</a></p>`)
+        .join("");
     }
     function Funcionamento(array) {
       if (!array || array.length === 0) {
@@ -152,7 +158,7 @@ function renderizarProjetos() {
                 <h2>Conceitos que apliquei</h2>
                 ${ListaItem(projeto.conceitos)}
                 
-                <h2>Links: </h2>
+                <h2>Links</h2>
                 ${ListaLinks(projeto.links)}
             </div>
         `;
