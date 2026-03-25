@@ -19,11 +19,23 @@ function saudacao() {
 saudacao();
 
 // renderização de projetos
-function Projeto(img, titulo, sobre, participacao, repositorio) {
+function Projeto(
+  img,
+  titulo,
+  descricao,
+  aplicacao,
+  participacao,
+  desenvolvido,
+  conceitos,
+  repositorio,
+) {
   this.img = img;
   this.titulo = titulo;
-  this.sobre = sobre;
+  this.descricao = descricao;
+  this.aplicacao = aplicacao;
   this.participacao = participacao;
+  this.desenvolvido = desenvolvido;
+  this.conceitos = conceitos;
   this.repositorio = repositorio;
 }
 
@@ -32,8 +44,28 @@ const projetos = [];
 const koitech = new Projeto(
   "./img/koi.jpg",
   "Análise do Censo 2022 IBGE",
-  "Desafio proposto pelo time institucional da FATEC Prof. Jessen Vidal para os alunos do primeiro semestre do curso de Desenvolvimento de Software Multiplataforma. O problema proposto foi a dificuldade do cliente em dar significado à quantidade massiva de dados do censo do IBGE de 2022. A solução oferecida foi criar uma plataforma online para exibir o resultado do tratamento e análise dos dados.",
-  "Atuei como Product Owner da equipe, tratando com o cliente o que seria necessário e de valor, bem como o que seria possível ser entregue. Elaborei o escopo do projeto, atividades/tarefas a serem realizadas, manutenção na documentação do projeto, entre outras atividades. Além disso, participei ativamente no desenvolvimento do produto, principalmente no frontend.",
+  "Projeto desenvolvido a partir de um desafio proposto pela FATEC Prof. Jessen Vidal, com o objetivo de transformar grandes volumes de dados do Censo 2022 do IBGE em informações compreensíveis e acessíveis por meio de visualizações interativas. A dificuldade do cliente estava em extrair valor e significado de uma grande massa de dados brutos disponibilizados pelo IBGE, tornando a análise pouco acessível para usuários não técnicos.",
+  [
+    "A aplicação realiza um pipeline de processamento de dados do Censo, desde a coleta até a visualização. Inicialmente, as tabelas são obtidas no site oficial do IBGE e passam por um processo de padronização e tratamento, resultando em dataframes estruturados.",
+    "A partir desses dados, são gerados dataframes voltados à extração de insights, como distribuição etária, nível de instrução da população, quantidade de indivíduos por cidade e proporção de jovens nas cidades do Vale do Paraíba.",
+    "Com base nesses dados, são criadas visualizações interativas utilizando Plotly. Os gráficos gerados são exportados em formato JSON e integrados ao projeto, sendo posteriormente disponibilizados na aplicação web por meio de rotas implementadas com Flask, permitindo que o usuário visualize os gráficos de forma simples e acessível.",
+  ],
+  "Atuei como Product Owner da equipe, sendo responsável pela definição de escopo, priorização de entregas e alinhamento com o cliente. Além disso, participei ativamente do desenvolvimento técnico da aplicação, com foco no tratamento de dados e construção do front-end.",
+  [
+    "Padronização e organização das tabelas do Censo fornecidas pelo IBGE",
+    "Tratamento e análise de dados utilizando Pandas em ambiente Google Colab",
+    "Geração de visualizações interativas com Plotly a partir dos dados tratados",
+    "Implementação de rotas com Flask para disponibilização dos gráficos na aplicação",
+    "Desenvolvimento da interface utilizando HTML, CSS e JavaScript",
+    "Criação de componentes reutilizáveis para padronização das páginas",
+    "Implementação de funcionalidade para download dos gráficos",
+  ],
+  [
+    "Manipulação e tratamento de dados",
+    "Visualização de dados",
+    "Componentização",
+    "Herança de templates com Flask",
+  ],
   "https://github.com/koitech-API",
 );
 
@@ -41,9 +73,24 @@ projetos.push(koitech);
 
 const koitechAero = new Projeto(
   "./img/koi-aero.png",
-  "Plataforma de Conteúdo Técnico de Normas Aeronáuticas - Em andamento",
-  "Desafio proposto pelo time institucional da FATEC Prof. Jessen Vidal para os alunos do segundo semestre do curso de Desenvolvimento de Software Multiplataforma. O problema proposto foi a dificuldade do cliente em buscar por normas técnicas em suas tarefas do dia-a-dia, dada a quantidade de normas e de informações que elas contém. A solução oferecida foi criar um sistema para gerenciar essas normas, permitindo organizar, registrar e consultar normas de forma estruturada.",
-  "Atuo como Product Owner da equipe, definindo com o cliente o que será necessário e de valor, bem como o que será possível ser entregue. Sou o responsável pelo escopo do projeto, atividades/tarefas a serem realizadas, manutenção na documentação do projeto, entre outras atividades. Além disso, participo ativamente no desenvolvimento do produto.",
+  "Plataforma de Conteúdo Técnico de Normas Aeronáuticas - Em desenvolvimento",
+  [
+    "Sistema para gerenciar normas técnicas aeronáuticas, com foco em organizar, visualizar e futuramente manipular dados de forma estruturada. A plataforma oferecerá recursos de busca, classificação e rastreabilidade das informações, facilitando o acesso às normas aplicáveis e tornando o processo mais ágil e eficiente.",
+  ],
+  [],
+  "Atuo como Product Owner da equipe, definindo com o cliente o que será necessário e de valor, bem como o que será possível ser entregue. Sou o responsável pelo escopo do projeto, atividades/tarefas a serem realizadas, manutenção na documentação do projeto, entre outras atividades. Além disso, participo do desenvolvimento do front-end da aplicação.",
+  [
+    "Desenvolvimento da interface com React, utilizando Vite para otimização do ambiente",
+    "Estilização com Tailwind CSS",
+    "Estruturação de componentes reutilizáveis visando escalabilidade",
+    "Organização de layout baseada em separação de responsabilidades",
+    "Estruturação do front-end para integração com API REST do projeto",
+  ],
+  [
+    "Componentização e reaproveitamento de código",
+    "Gerenciamento de props entre componentes",
+    "Estruturação de pastas pensando em crescimento do projeto",
+  ],
   "https://github.com/KoiTech-Aero",
 );
 
@@ -51,12 +98,29 @@ projetos.push(koitechAero);
 
 function renderizarProjetos() {
   const container = document.querySelector(".projetosContainer");
-  projetos.reverse()
+  projetos.reverse();
 
   for (let i = 0; i < projetos.length; i++) {
     const projeto = projetos[i];
 
     const article = document.createElement("article");
+
+    function ListaItem(array) {
+      for (const i of array) {
+        return array.map((item) => `<p>• ${item}</p>`).join("");
+      }
+    }
+    function ListaParagrafo(array) {
+      for (const i of array) {
+        return array.map((item) => `<p>${item}</p>`).join("");
+      }
+    }
+    function Funcionamento(array) {
+      if (!array || array.length === 0) {
+        return "";
+      }
+      return `<h2>Funcionamento da aplicação</h2><p>${ListaParagrafo(array)}</p>`;
+    }
 
     article.innerHTML = `
             <img src="${projeto.img}">
@@ -64,12 +128,20 @@ function renderizarProjetos() {
             <div>
                 <h1>${projeto.titulo}</h1>
 
-                <h2>Sobre o Projeto</h2>
-                <p>${projeto.sobre}</p>
+                <h2>Descrição</h2>
+                <p>${projeto.descricao}</p>
+
+                ${Funcionamento(projeto.aplicacao)}
 
                 <h2>Minha participação</h2>
                 <p>${projeto.participacao}</p>
+  
+                <h2>O que desenvolvi</h2>
+                <p>${ListaItem(projeto.desenvolvido)}</p>
 
+                <h2>Conceitos que apliquei</h2>
+                <p>${ListaItem(projeto.conceitos)}</p>
+                
                 <h2>Repositório do projeto: </h2>
                 <p><a href="${projeto.repositorio}">${projeto.repositorio}</a></p>
             </div>
