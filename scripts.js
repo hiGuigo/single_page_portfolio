@@ -27,7 +27,7 @@ function Projeto(
   participacao,
   desenvolvido,
   conceitos,
-  repositorio,
+  links,
 ) {
   this.img = img;
   this.titulo = titulo;
@@ -36,7 +36,7 @@ function Projeto(
   this.participacao = participacao;
   this.desenvolvido = desenvolvido;
   this.conceitos = conceitos;
-  this.repositorio = repositorio;
+  this.links = links;
 }
 
 const projetos = [];
@@ -66,7 +66,10 @@ const koitech = new Projeto(
     "Componentização",
     "Herança de templates com Flask",
   ],
-  "https://github.com/koitech-API",
+  [
+    "https://github.com/koitech-API",
+    "https://www.youtube.com/watch?v=_kmMAI6yvoQ",
+  ],
 );
 
 projetos.push(koitech);
@@ -91,7 +94,7 @@ const koitechAero = new Projeto(
     "Gerenciamento de props entre componentes",
     "Estruturação de pastas pensando em crescimento do projeto",
   ],
-  "https://github.com/KoiTech-Aero",
+  ["https://github.com/KoiTech-Aero"],
 );
 
 projetos.push(koitechAero);
@@ -113,6 +116,13 @@ function renderizarProjetos() {
     function ListaParagrafo(array) {
       for (const i of array) {
         return array.map((item) => `<p>${item}</p>`).join("");
+      }
+    }
+    function ListaLinks(array) {
+      for (const i of array) {
+        return array
+          .map((item) => `<p><a href="${item}">${item}</a></p>`)
+          .join("");
       }
     }
     function Funcionamento(array) {
@@ -137,13 +147,13 @@ function renderizarProjetos() {
                 <p>${projeto.participacao}</p>
   
                 <h2>O que desenvolvi</h2>
-                <p>${ListaItem(projeto.desenvolvido)}</p>
+                ${ListaItem(projeto.desenvolvido)}
 
                 <h2>Conceitos que apliquei</h2>
-                <p>${ListaItem(projeto.conceitos)}</p>
+                ${ListaItem(projeto.conceitos)}
                 
-                <h2>Repositório do projeto: </h2>
-                <p><a href="${projeto.repositorio}">${projeto.repositorio}</a></p>
+                <h2>Links: </h2>
+                ${ListaLinks(projeto.links)}
             </div>
         `;
     container.appendChild(article);
