@@ -1,160 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | Guilherme Alvarenga</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio | Guilherme Alvarenga</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
 
-  <link rel="stylesheet" href="./reset.css" />
-  <link rel="stylesheet" href="./style.css" />
+    <script src="./scripts.js" defer></script>
 
-  <script src="./scripts.js" defer></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+  </head>
 
-<body>
-  <header class="cabecalho">
-    <figure>
-      <img src="./img/toadstool.png" title="gosto de desenhar cogumelos :)" style="width: 30px" />
-      <h1>Portfólio</h1>
-    </figure>
-    <nav>
-      <a href="#projetosContainer">PROJETOS</a>
-      <a href="#certificadosContainer">CERTIFICADOS</a>
-    </nav>
-  </header>
+  <body>
+    <header class="cabecalho">
+      <figure>
+        <img
+          src="./img/toadstool.png"
+          title="gosto de desenhar cogumelos :)"
+          style="width: 30px"
+        />
+        <h1>Portfólio</h1>
+      </figure>
+      <nav>
+        <a href="#projetosContainer">PROJETOS</a>
+        <a href="#certificadosContainer">CERTIFICADOS</a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- banner computador -->
-    <section class="banner">
-      <aside class="esquerda">
+    <main>
+      <!-- banner computador -->
+      <section class="banner">
+        <aside class="esquerda">
+          <div>
+            <h2 class="saudacao"></h2>
+            <h1>Guilherme!</h1>
+            <p>Tecnólogo em Análise e Desenvolvimento de Sistemas,</p>
+            <p>e estudante de Desenvolvimento de Software Multiplataforma</p>
+
+            <div class="contato">
+              <img
+                src="./img/email.png"
+                style="width: 50px; cursor: pointer"
+                onclick="
+                  navigator.clipboard
+                    .writeText('guilherme.alvarenga021@gmail.com')
+                    .then(() => alert('Endereço de email copiado!'))
+                "
+              />
+              <a href="https://github.com/hiGuigo"
+                ><img src="./img/github.png" style="width: 50px"
+              /></a>
+              <a
+                href="https://www.linkedin.com/in/guilherme-alvarenga-0834b938a/"
+                ><img
+                  src="./img/linkedin.png"
+                  style="width: 50px; cursor: pointer"
+              /></a>
+            </div>
+          </div>
+        </aside>
+        <aside class="direita">
+          <img src="./img/foto3.png" />
+        </aside>
+      </section>
+
+      <!-- banner dispositivo móvel -->
+      <section class="bannerResponsivo">
         <div>
+          <img src="./img/foto2.jpg" class="fotoResponsiva" />
           <h2 class="saudacao"></h2>
           <h1>Guilherme!</h1>
-          <p>Estudante de Desenvolvimento de Software Multiplataforma</p>
-
-          <div class="contato">
-            <img src="./img/email.png" style="width: 50px; cursor: pointer;"
-              onclick="navigator.clipboard.writeText('guilherme.alvarenga021@gmail.com').then(()=>alert('Endereço de email copiado!'))" />
-            <a href="https://github.com/hiGuigo"><img src="./img/github.png" style="width: 50px" /></a>
-            <a href="https://www.linkedin.com/in/guilherme-alvarenga-0834b938a/"><img src="./img/linkedin.png"
-                style="width: 50px; cursor: pointer;" /></a>
-          </div>
+          <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
         </div>
-      </aside>
-      <aside class="direita">
-        <img src="./img/foto3.png" />
-      </aside>
-    </section>
+        <div class="contato">
+          <img
+            src="./img/email.png"
+            style="width: 50px; cursor: pointer"
+            onclick="
+              navigator.clipboard
+                .writeText('guilherme.alvarenga021@gmail.com')
+                .then(() => alert('Endereço de email copiado!'))
+            "
+          />
+          <a href="https://github.com/hiGuigo"
+            ><img src="./img/github.png" style="width: 50px"
+          /></a>
+          <a href="https://www.linkedin.com/in/guilherme-alvarenga-0834b938a/"
+            ><img src="./img/linkedin.png" style="width: 50px; cursor: pointer"
+          /></a>
+        </div>
+      </section>
 
-    <!-- banner dispositivo móvel -->
-    <section class="bannerResponsivo">
-      <div>
-        <img src="./img/foto2.jpg" class="fotoResponsiva" />
-        <h2 class="saudacao"></h2>
-        <h1>Guilherme!</h1>
-        <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
-      </div>
-      <div class="contato">
-        <img src="./img/email.png" style="width: 50px; cursor: pointer;"
-          onclick="navigator.clipboard.writeText('guilherme.alvarenga021@gmail.com').then(()=>alert('Endereço de email copiado!'))" />
-        <a href="https://github.com/hiGuigo"><img src="./img/github.png" style="width: 50px" /></a>
-        <a href="https://www.linkedin.com/in/guilherme-alvarenga-0834b938a/"><img src="./img/linkedin.png"
-            style="width: 50px; cursor: pointer;" /></a>
-      </div>
-    </section>
+      <div class="transicao"></div>
+      <section class="container">
+        <article class="sobre">
+          <h2>Sobre mim</h2>
+          <img src="./img/foto1.jpeg" />
+          <p>
+            Sou um desenvolvedor em formação com foco em me tornar full stack,
+            atualmente direcionando meus estudos para front-end com React, além
+            de fundamentos em JavaScript, TypeScript, Node.js e APIs REST. Tenho
+            interesse em entender e aplicar regras de negócio, desenvolvendo
+            soluções que conectam interface, lógica e dados de forma
+            consistente.
+          </p>
+          <p>
+            Meu objetivo a curto prazo é conseguir um estágio como
+            desenvolvedor, vizando evoluir para júnior. No longo prazo, pretendo
+            me consolidar como desenvolvedor full stack pleno, atuando no
+            desenvolvimento de aplicações web completas, com foco em boas
+            práticas, organização de código, componentização e integração entre
+            sistemas.
+          </p>
+          <br />
+          <p>
+            <strong>Palavras-chave:</strong> React, JavaScript, TypeScript, Node.js, APIs REST,
+            regras de negócio, arquitetura de software, desenvolvimento web Em
+            evolução: boas práticas, organização de código, integração de
+            sistemas
+          </p>
+        </article>
 
-    <div class="transicao"></div>
-    <section class="container">
-      <article class="sobre">
-        <h2>Sobre mim</h2>
-        <img src="./img/foto1.jpeg" />
-        <p>Me chamo Guilherme e tenho 24 anos. Acredito que minha motivação em explorar a área da tecnologia se dá pelo
-          meu gosto em resolver problemas. Recentemente me interessei muito pela parte não-técnica da área, trabalhando
-          principalmente minhas soft skills. Passei a ter grande curiosidade por regras de negócio e em como gerir um
-          projeto conciso. Além disso, tenho me dedicado principalmente nos estudos sobre front-end.
-        </p>
-        <p>Sou extremamente paciente, gosto muito de ler e também de acampar. Embora goste das telas, prefiro passar meu
-          tempo livre longe delas me dedicando aos meus passatempos. Gosto de desenhar, jogar sudoku, escrever e tocar
-          violão.</p>
-      </article>
+        <article class="descricao">
+          <span>
+            <h2>Formação</h2>
+            <div>
+              <p>
+                <strong>
+                  Superior - Faculdade de Tecnologia Prof. Jessen Vidal - FATEC
+                </strong>
+              </p>
+              <p><strong>Curso:</strong> Desenvolvimento de Software Multiplataforma</p>
+              <p><strong>Período:</strong> 2025 - presente</p>
+            </div>
+            <div>
+              <p>
+                <strong>
+                Ensino Superior - Faculdade de Tecnologia Prof. Jessen Vidal -
+                FATEC
+                </strong>
+              </p>
+              <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</p>
+              <p><strong>Período:</strong> 2019 a 2022 (concluído)</p>
+            </div>
+            <div>
+              <p>
+                <strong>Ensino Médio Técnico - Escola Técnica Prof. Everardo Passos -
+                ETEP
+                </strong>
+              </p>
+              <p><strong>Curso:</strong> Técnico em Informática para Internet</p>
+              <p><strong>Período:</strong> 2016 a 2018 (concluído)</p>
+            </div>
+          </span>
 
-      <article class="descricao">
-        <span>
-          <h2>Formação</h2>
-          <div>
-            <p>Ensino Superior - Faculdade de Tecnologia Prof. Jessen Vidal - FATEC</p>
-            <p>Curso: Desenvolvimento de Software Multiplataforma</p>
-            <p>Período: 2025 - presente</p>
-          </div>
-          <div>
-            <p>Ensino Superior - Faculdade de Tecnologia Prof. Jessen Vidal - FATEC</p>
-            <p>Curso: Análise e Desenvolvimento de Sistemas</p>
-            <p>Período: 2019 a 2022 (concluído)</p>
-          </div>
-          <div>
-            <p>Ensino Médio Técnico - Escola Técnica Prof. Everardo Passos - ETEP</p>
-            <p>Curso: Técnico em Informática para Internet</p>
-            <p>Período: 2016 a 2018 (concluído)</p>
-          </div>
-        </span>
+          <span>
+            <h2>Competências Técnicas</h2>
+            <div class="competenciasTecnicas">
+              <p>Tecnologias que possuo afinidade:</p>
+              <p>
+                <img
+                  src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                />
+                <img
+                  src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                />
+                <img
+                  src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
+                />
+              </p>
+              <p>Tecnologias que estou estudando no momento:</p>
+              <p>
+                <img
+                  src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+                />
 
-        <span>
-          <h2>Competências Técnicas (Hard Skills)</h2>
-          <div>
-            <p>Tecnologias que possuo afinidade:</p>
-            <p>
-              <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
-              <img src="https://img.shields.io/badge/Html5-E34F26?logo=html5&logoColor=white">
-              <img src="https://img.shields.io/badge/CSS-1572B6?logo=css&logoColor=white">
-              <img src="https://img.shields.io/badge/.Net-512BD4?logo=dotnet&logoColor=white">
-              <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white">
-            </p>
-            <p>Tecnologias que estou estudando no momento:</p>
-            <p>
-              <img src="https://img.shields.io/badge/JavaScript-FFDE21?logo=javascript&logoColor=white">
-              <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
+                <img
+                  src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                />
 
-            </p>
-          </div>
-        </span>
+                <img
+                  src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
+                />
+              </p>
+              <p>Tecnologias que já utilizei anteriormente:</p>
+              <p>
+                <img
+                  src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                />
 
-        <span>
-          <h2>Experiências em Projetos (Soft Skills)</h2>
-          <div>
-            <p>• Gosto de executar minhas tarefas de forma organizada e estruturada.</p>
-            <p>• Prezo pelo diálogo e busco sempre considerar a opinião de toda a equipe.</p>
-            <p>• Gosto de oferecer apoio, técnico ou não, e vejo em cada oportunidade de ajudar uma chance de aprender e
-              aprimorar meus conhecimentos.</p>
-          </div>
-        </span>
-      </article>
-    </section>
+                <img
+                  src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"
+                />
 
-    <div class="transicao" style="height: 50px;"></div>
-    <section id="projetosContainer" class="projetosContainer">
-      <h1 style="margin: 2rem; font-size: 30pt;">PROJETOS</h1>
-    </section>
+                <img
+                  src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
+                />
 
-    <div class="transicao" style="height: 50px;"></div>
-    <section id="certificadosContainer" class="certificadosContainer">
-      <h1 style="margin: 2rem; font-size: 30pt;">CERTIFICADOS</h1>
-      <article>
-        <h1>Tecnólogo em Análise e Desenvolvimento de Sistemas</h1>
-        <img src="./img/diploma01.jpg" />
-        <img src="./img/diploma02.jpg" />
-      </article>
-      <article>
-        <h1>Escola de Inovadores</h1>
-        <img src="./img/certificado_escola_de_inovadores.jpg" />
-      </article>
-    </section>
+                <img
+                  src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
+                />
 
-  </main>
+                <img
+                  src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"
+                />
 
-  <footer>
-    <p>&copy; Guilherme Alvarenga - 2025</p>
-  </footer>
-</body>
+                <img
+                  src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"
+                />
 
+                <img
+                  src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
+                />
+
+                <img
+                  src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white"
+                />
+              </p>
+            </div>
+          </span>
+
+          <span>
+            <h2>Experiências em Projetos</h2>
+            <div style="font-weight: 300">
+              <p>
+                • <strong>Comunicação:</strong> alinhamento direto com cliente
+                para definição de requisitos e entregas de valor
+              </p>
+              <p>
+                • <strong>Trabalho em equipe:</strong> colaboração com o time no
+                desenvolvimento e organização das atividades
+              </p>
+              <p>
+                • <strong>Organização e planejamento:</strong> definição de
+                escopo, tarefas e manutenção da documentação do projeto
+              </p>
+              <p>
+                • <strong>Visão de produto:</strong> priorização de
+                funcionalidades com foco em valor e viabilidade de entrega
+              </p>
+              <p>
+                • <strong>Responsabilidade:</strong> acompanhamento de demandas
+                e comprometimento com prazos
+              </p>
+              <p>
+                • <strong>Resolução de problemas:</strong> atuação prática no
+                desenvolvimento, principalmente com React
+              </p>
+              <p>
+                • <strong>Adaptabilidade:</strong> equilíbrio entre necessidades
+                de negócio e implementação técnica
+              </p>
+            </div>
+          </span>
+        </article>
+      </section>
+
+      <div class="transicao" style="height: 50px"></div>
+      <section id="projetosContainer" class="projetosContainer">
+        <h1 style="margin: 2rem; font-size: 30pt">PROJETOS</h1>
+      </section>
+
+      <div class="transicao" style="height: 50px"></div>
+      <section id="certificadosContainer" class="certificadosContainer">
+        <h1 style="margin: 2rem; font-size: 30pt">CERTIFICADOS</h1>
+        <article>
+          <h1>Tecnólogo em Análise e Desenvolvimento de Sistemas</h1>
+          <img src="./img/diploma01.jpg" />
+          <img src="./img/diploma02.jpg" />
+        </article>
+        <article>
+          <h1>Escola de Inovadores</h1>
+          <img src="./img/certificado_escola_de_inovadores.jpg" />
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; Guilherme Alvarenga - 2025</p>
+    </footer>
+  </body>
 </html>

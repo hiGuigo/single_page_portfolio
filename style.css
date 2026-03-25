@@ -1,5 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+strong {
     font-weight: bold;
 }
 
@@ -19,6 +26,7 @@ body {
     position: relative;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 .cabecalho a:hover {
@@ -51,6 +59,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 50%;
+    font-weight: bold;
 }
 
 .banner .direita {
@@ -94,7 +103,7 @@ body {
 }
 
 .contato {
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .contato img {
@@ -119,9 +128,10 @@ body {
 }
 
 .sobre p {
-    text-indent: 0.5rem;
+    text-indent: 0.75rem;
     text-align: justify;
     margin: 1rem;
+    line-height: 1.5;
 }
 
 .sobre img {
@@ -151,6 +161,10 @@ body {
     transition: 0.5s;
 }
 
+.competenciasTecnicas{
+    font-weight: bold;
+}
+
 .descricao {
     display: flex;
     flex-direction: column;
@@ -164,7 +178,7 @@ body {
 }
 
 .descricao p {
-    margin: 0.5rem;
+    margin: 0.75rem;
 }
 
 .descricao div {
@@ -216,6 +230,7 @@ body {
     font-size: 12pt;
     text-align: justify;
     text-indent: 0.5rem;
+    line-height: 1.5;
 }
 
 .projetosContainer article a {
@@ -267,6 +282,7 @@ footer {
     position: relative;
     z-index: 10;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 @media (max-width: 800px) {
@@ -313,7 +329,8 @@ footer {
         align-items: center;
         justify-content: center;
         text-align: center;
-        height: 100vh; 
+        height: 100vh;
+        font-weight: bold;
     }
 
     .fotoResponsiva {
