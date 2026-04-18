@@ -22,20 +22,22 @@ saudacao();
 function Projeto(
   img,
   titulo,
-  descricao,
-  aplicacao,
-  participacao,
-  desenvolvido,
-  conceitos,
+  problema,
+  objetivo,
+  solucao,
+  tecnologias,
+  resultado,
+  contribuicao,
   links,
 ) {
   this.img = img;
   this.titulo = titulo;
-  this.descricao = descricao;
-  this.aplicacao = aplicacao;
-  this.participacao = participacao;
-  this.desenvolvido = desenvolvido;
-  this.conceitos = conceitos;
+  this.problema = problema;
+  this.objetivo = objetivo;
+  this.solucao = solucao;
+  this.tecnologias = tecnologias;
+  this.resultado = resultado;
+  this.contribuicao = contribuicao;
   this.links = links;
 }
 
@@ -44,27 +46,36 @@ const projetos = [];
 const koitech = new Projeto(
   "./img/koi.jpg",
   "Análise do Censo 2022 IBGE",
-  "Projeto desenvolvido a partir de um desafio proposto pela FATEC Prof. Jessen Vidal, com o objetivo de transformar grandes volumes de dados do Censo 2022 do IBGE em informações compreensíveis e acessíveis por meio de visualizações interativas. A dificuldade do cliente estava em extrair valor e significado de uma grande massa de dados brutos disponibilizados pelo IBGE, tornando a análise pouco acessível para usuários não técnicos.",
   [
-    "A aplicação realiza um pipeline de processamento de dados do Censo, desde a coleta até a visualização. Inicialmente, as tabelas são obtidas no site oficial do IBGE e passam por um processo de padronização e tratamento, resultando em dataframes estruturados.",
-    "A partir desses dados, são gerados dataframes voltados à extração de insights, como distribuição etária, nível de instrução da população, quantidade de indivíduos por cidade e proporção de jovens nas cidades do Vale do Paraíba.",
-    "Com base nesses dados, são criadas visualizações interativas utilizando Plotly. Os gráficos gerados são exportados em formato JSON e integrados ao projeto, sendo posteriormente disponibilizados na aplicação web por meio de rotas implementadas com Flask, permitindo que o usuário visualize os gráficos de forma simples e acessível.",
-  ],
-  "Atuei como Product Owner da equipe, sendo responsável pela definição de escopo, priorização de entregas e alinhamento com o cliente. Além disso, participei ativamente do desenvolvimento técnico da aplicação, com foco no tratamento de dados e construção do front-end.",
-  [
-    "Padronização e organização das tabelas do Censo fornecidas pelo IBGE",
-    "Tratamento e análise de dados utilizando Pandas em ambiente Google Colab",
-    "Geração de visualizações interativas com Plotly a partir dos dados tratados",
-    "Implementação de rotas com Flask para disponibilização dos gráficos na aplicação",
-    "Desenvolvimento da interface utilizando HTML, CSS e JavaScript",
-    "Criação de componentes reutilizáveis para padronização das páginas",
-    "Implementação de funcionalidade para download dos gráficos",
+    "Os dados do Censo 2022 disponibilizados pelo IBGE são extensos, distribuídos em múltiplas planilhas e com baixa padronização, dificultando a análise e a extração de insights.",
   ],
   [
-    "Manipulação e tratamento de dados",
-    "Visualização de dados",
-    "Componentização",
-    "Herança de templates com Flask",
+    "Transformar dados brutos do Censo em informações acessíveis e de fácil interpretação — especialmente para usuários não técnicos.",
+  ],
+  [
+    "Desenvolvi, em equipe, uma aplicação para processamento e visualização de dados, estruturando um pipeline completo (coleta → tratamento → insights → visualização).",
+    "Os dados foram extraídos de planilhas oficiais (.xlsx), tratados e organizados com Pandas, e transformados em visualizações interativas com Plotly.",
+  ],
+  [
+    "Python (Pandas)",
+    "Plotly",
+    "Flask",
+    "HTML, CSS, JavaScript",
+    "Google Colab",
+    "Git",
+  ],
+  [
+    "A aplicação reduziu significativamente o tempo e o esforço necessários para análise dos dados demográficos, que antes eram processados manualmente em planilhas.",
+    "Ao centralizar as informações em gráficos interativos, a solução permitiu identificar padrões de forma mais rápida e intuitiva, facilitando a geração de insights e apoiando a tomada de decisão em contextos públicos.",
+  ],
+  [
+    "Atuação como Product Owner, definindo escopo e priorizando entregas",
+    "Tratamento de valores nulos",
+    "Normalização de colunas",
+    "Exportação de gráficos em JSON",
+    "Geração de gráficos interativos com Plotly",
+    "Desenvolvimento do front-end com HTML, CSS e JavaScript",
+    "Estruturação de templates com Flask (Jinja2)",
   ],
   [
     { key: "https://github.com/koitech-API", value: "Repositório" },
@@ -74,37 +85,53 @@ const koitech = new Projeto(
     },
   ],
 );
-
 projetos.push(koitech);
 
 const koitechAero = new Projeto(
   "./img/koi-aero.png",
-  "Plataforma de Conteúdo Técnico de Normas Aeronáuticas - Em desenvolvimento",
+  "Plataforma de Gerenciamento de Normas Aeronáuticas (em desenvolvimento)",
   [
-    "Sistema para gerenciar normas técnicas aeronáuticas, com foco em organizar, visualizar e futuramente manipular dados de forma estruturada. A plataforma oferecerá recursos de busca, classificação e rastreabilidade das informações, facilitando o acesso às normas aplicáveis e tornando o processo mais ágil e eficiente.",
+    "O cliente, fabricante de peças aeronáuticas, utiliza um grande volume de normas técnicas ao longo de todo o processo de engenharia. Essas normas são essenciais para garantir conformidade e qualidade nos projetos.",
+    "No entanto, a identificação e consulta dessas normas é um processo lento, devido à estrutura densa e à dificuldade de organização das informações, o que impacta diretamente a eficiência das atividades técnicas.",
   ],
-  [],
-  "Atuo como Product Owner da equipe, definindo com o cliente o que será necessário e de valor, bem como o que será possível ser entregue. Sou o responsável pelo escopo do projeto, atividades/tarefas a serem realizadas, manutenção na documentação do projeto, entre outras atividades. Além disso, participo do desenvolvimento do front-end da aplicação.",
   [
-    "Desenvolvimento da interface com React, utilizando Vite para otimização do ambiente",
+    "Desenvolver uma plataforma capaz de centralizar o gerenciamento de normas técnicas, permitindo aos engenheiros e time técnico organizar, registrar e consultar informações de forma estruturada, com recursos de busca, classificação e rastreabilidade.",
+  ],
+  [
+    "Até o momento, desenvolvi, em equipe, uma aplicação web para gerenciamento de normas técnicas, estruturada para suportar operações de cadastro, consulta e relacionamento entre normas.",
+    "A arquitetura da aplicação foi dividida entre front-end e back-end, com comunicação via API REST e a estruturação do backend com Fastify, incluindo modelagem de dados com Prisma e validação de dados com Zod.",
+  ],
+  [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Node.js",
+    "Fastify",
+    "Prisma",
+    "Zod",
+    "Docker",
+    "Git",
+  ],
+  [
+    "A aplicação já permite o cadastro e gerenciamento de normas técnicas, incluindo controle de versões, relacionamento entre normas e aplicação de filtros para consulta.",
+    "Com isso, o sistema substitui processos manuais e descentralizados por uma solução estruturada, reduzindo o tempo necessário para localizar normas técnicas e melhorando a organização das informações no fluxo de engenharia.",
+  ],
+  [
+    "Atuação como Product Owner, definindo escopo, priorizando entregas e alinhando requisitos com o cliente",
+    "Desenvolvimento das interfaces com React e JavaScript",
+    "Estruturação do front-end com separação por responsabilidades (components, services, utils, pages)",
     "Estilização com Tailwind CSS",
-    "Estruturação de componentes reutilizáveis visando escalabilidade",
-    "Organização de layout baseada em separação de responsabilidades",
-    "Estruturação do front-end para integração com API REST do projeto",
+    "Preparação do front-end para consumo de API REST",
   ],
   [
-    "Componentização e reaproveitamento de código",
-    "Gerenciamento de props entre componentes",
-    "Estruturação de pastas pensando em crescimento do projeto",
-  ],
-  [
+    { key: "https://github.com/koitech-aero", value: "Repositório" },
     {
-      key: "https://github.com/koitech-aero",
-      value: "Repositório",
+      key: "https://www.youtube.com/watch?v=e-QOllVsI6s",
+      value: "Demonstração",
     },
   ],
 );
-
 projetos.push(koitechAero);
 
 function renderizarProjetos() {
@@ -131,11 +158,11 @@ function renderizarProjetos() {
         .map((item) => `<p><a href="${item.key}">• ${item.value}</a></p>`)
         .join("");
     }
-    function Funcionamento(array) {
+    function Solucao(array) {
       if (!array || array.length === 0) {
         return "";
       }
-      return `<h2>Funcionamento da aplicação</h2><p>${ListaParagrafo(array)}</p>`;
+      return `<h2>Solução</h2><p>${ListaParagrafo(array)}</p>`;
     }
 
     article.innerHTML = `
@@ -144,19 +171,22 @@ function renderizarProjetos() {
             <div>
                 <h1>${projeto.titulo}</h1>
 
-                <h2>Descrição</h2>
-                <p>${projeto.descricao}</p>
+                <h2>Problema</h2>
+                ${ListaParagrafo(projeto.problema)}
 
-                ${Funcionamento(projeto.aplicacao)}
+                <h2>Objetivo</h2>
+                ${ListaParagrafo(projeto.objetivo)}
+          
+                ${Solucao(projeto.solucao)}
 
-                <h2>Minha participação</h2>
-                <p>${projeto.participacao}</p>
+                <h2>Tecnologias</h2>
+                ${ListaItem(projeto.tecnologias)}
   
-                <h2>O que desenvolvi</h2>
-                ${ListaItem(projeto.desenvolvido)}
+                <h2>Resultado</h2>
+                ${ListaParagrafo(projeto.resultado)}
 
-                <h2>Conceitos que apliquei</h2>
-                ${ListaItem(projeto.conceitos)}
+                <h2>Minha contribuição</h2>
+                ${ListaItem(projeto.contribuicao)}
                 
                 <h2>Links</h2>
                 ${ListaLinks(projeto.links)}
